@@ -1,7 +1,9 @@
 # Distinguishing Human and GPT-generated Text Using Only Syntax Information
 *Includes data from the following study: https://pubmed.ncbi.nlm.nih.gov/37903836/*
 
-![](vocab_graph.png)
+<img src="vocab_graph.png" width="200"/>
+
+*[https://www.linkedin.com/posts/mushtaqbilalphd_looks-like-biomedical-researchers-are-increasingly-activity-7246137502237945856-iC-T/](Interesting graphic and commentary on GPT use in academia)*
 
 With AI-generated content everywhere, it's important to know how to tell whether or not something was made by a real person. In my experience, when it comes to GPT-generated text, this is not too difficult. I’ve been using ChatGPT since it came out, and from reading so much of its output, I’ve kind of developed this sense of familiarity: anytime I see it out in the wild, it’s almost like running into an old friend– I just can’t help but notice it.
 
