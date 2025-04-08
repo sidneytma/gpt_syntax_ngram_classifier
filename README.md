@@ -77,9 +77,9 @@ The latter two items are ones that I am particularly curious about, because I pe
 
 ![](results.png)
 
-*Cross validation accuracy is highest for trigrams, at 96%.*
+*Cross validation accuracy is highest for trigrams, at 99%.*
 
-Accuracy is already high (83%) for unigrams. It is very high for bigrams (94%) and highest for trigrams (96%). It declines at 4-grams (81%) and settles to around chance (50%) for 5-grams and 6-grams. 
+Accuracy is already high (91%) for unigrams. It is very high for bigrams (98%) and highest for trigrams (99%). It declines at 4-grams (88%) and settles to around chance (50%) for 5-grams and 6-grams. 
 
 Interestingly, for all n-gram sizes except `n=1`, the model’s precision for human guesses and recall for GPT guesses were 100%, meaning it was over-guessing GPT and under-guessing human. My assumption is that, while there are a variety of human participants who may write differently from one another, there is only one GPT “writer”– meaning GPT outputs were probably much more consistent and recognizable than human outputs.
 
