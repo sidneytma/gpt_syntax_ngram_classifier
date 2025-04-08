@@ -76,6 +76,7 @@ The latter two items are ones that I am particularly curious about, because I pe
 ## Results
 
 ![](results.png)
+
 *Cross validation accuracy is highest for trigrams, at 96%.*
 
 Accuracy is already high (83%) for unigrams. It is very high for bigrams (94%) and highest for trigrams (96%). It declines at 4-grams (81%) and settles to around chance (50%) for 5-grams and 6-grams. 
