@@ -1,21 +1,29 @@
 # Distinguishing Human and GPT-generated Text Using Only Syntax Information
 *Includes data from the following study: https://pubmed.ncbi.nlm.nih.gov/37903836/*
 
-With AI-generated content everywhere, it can be hard to know whether or not something was made by an actual person, and it’s important to know what cues to look out for that can help differentiate them. In my experience, when it comes to GPT-generated text, this is not too difficult. I’ve been using ChatGPT since it came out, and from reading so much of its output, I’ve kind of developed this sense of familiarity: anytime I see it out in the wild, it’s almost like running into an old friend– I just can’t help but notice it.
+![](vocab_graph.png)
 
-Still, while it’s easy to go off of intuition, it’s hard to pinpoint the exact “markers” of GPT-generated text. Vocabulary is certainly a key part of that: GPT has some [characteristic words that it overrepresents](https://arxiv.org/abs/2412.11385) (delve, tapestry, underscore), and [overall uses a richer vocabulary than humans do](https://arxiv.org/html/2503.13687v1).
+With AI-generated content everywhere, it's important to know how to tell whether or not something was made by a real person. In my experience, when it comes to GPT-generated text, this is not too difficult. I’ve been using ChatGPT since it came out, and from reading so much of its output, I’ve kind of developed this sense of familiarity: anytime I see it out in the wild, it’s almost like running into an old friend– I just can’t help but notice it.
 
-However, I’ve always had the intuition that this issue goes deeper than vocabulary differences (lexical semantics) and exists in **structural differences** (syntax) of text. It almost seems like GPT has a cookie-cutter “template” to conform to, regardless of the words it chooses. This raises an interesting (and somewhat confusing) question: *Relying solely on syntactic information, could we still differentiate human and GPT-generated text?* Or in other words, even if we stripped away the lexical information and thus ruled-out vocab differences, could we still tell them apart?
+Still, while it’s easy to go off of intuition, it’s hard to pinpoint the exact “markers” of GPT-generated text. **Vocabulary** is certainly a key part of that: GPT has some [characteristic words that it overrepresents](https://arxiv.org/abs/2412.11385) (delve, tapestry, underscore), and [overall uses a richer vocabulary than humans do](https://arxiv.org/html/2503.13687v1).
+
+However, I’ve always had the intuition that this issue goes deeper than vocabulary differences (lexical semantics) and exists in **structural differences** (syntax) of text. It almost seems like GPT has a cookie-cutter “template” to conform to, regardless of the words it chooses. This raises an interesting (and somewhat confusing) question: 
+
+*Relying solely on syntactic information, could we still differentiate human and GPT-generated text?* 
+
+Or in other words, even if we stripped away the lexical information and thus ruled-out vocab differences, could we still tell them apart?
 
 ## Concept
 
-One basic way to visualize the bare structure of a text is to simply examine the parts of speech of each word. For example:
+One basic way to visualize the bare structure of a text is to simply examine the part of speech of each individual word. For example:
 
 `The quick brown fox jumped over the lazy dog.`
 
 `DET ADJ ADJ NOUN VERB-PAST PREP DET ADJ NOUN PERIOD`
 
-Thus, we turn a sentence into a list of POS (part of speech) tags. This would be a word-level syntax analysis of sentences, which unfortunately means it misses out on things like dependencies and structural hierarchy. However, there is still valuable information and features to extract from this data. We can look at the **part-of-speech n-grams**, which are sequences of `n` POS tags. If it’s true that human and GPT-generated text have structural differences (differences beyond vocabulary), it could be expected that the frequencies of POS n-grams should differ between them.
+We can turn a sentence into a list of POS (part of speech) tags. This is a word-level syntax analysis of sentences, which unfortunately means it misses out on complex patterns like dependencies and structural hierarchy. However, there is still valuable information and features to extract from this data. We can look at the **part-of-speech n-grams**, which are sequences of `n` POS tags. 
+
+If it’s true that human and GPT-generated text have structural differences (differences beyond vocabulary), we could expect that the frequencies of POS n-grams should differ between them.
 
 ## Task
 
