@@ -14,7 +14,7 @@ Still, while it’s easy to go off of intuition, it’s hard to pinpoint the exa
 
 However, I’ve always had the intuition that this issue goes deeper than vocabulary differences (lexical semantics) and exists in **structural differences** (syntax) of text. It almost seems like GPT has a cookie-cutter “template” to conform to, regardless of the words it chooses. This raises an interesting (and somewhat confusing) question: 
 
-*Relying solely on syntactic information, could we still differentiate human and GPT-generated text?* 
+***Relying solely on syntactic information, could we still differentiate human and GPT-generated text?*** 
 
 Or in other words, even if we stripped away the lexical information and thus ruled-out vocab differences, could we still tell them apart?
 
@@ -65,11 +65,11 @@ I expect that `n=3` or `n=4` will be the optimal values. The n-grams won’t be 
 ### *What n-grams are the most important in classification?*
 
 There are certain POS tag patterns that I would expect to see as good predictors of human and GPT-generated text:
-Humans should use more personal pronouns, particularly “I.”
-GPT seems to use description words a lot more (adjectives and adverbs)
-GPT uses lists often, so I would expect to see more commas and structures like `NOUN COMMA NOUN COMMA COOR-CONJUNCTION NOUN`
-`COMMA VERB-GERUND`: GPT often uses verb gerunds after clauses; for instance: “The dog slept**, offering** a fun jumping challenge for the fox.”
-`PERIOD PREP VERB-GERUND`: GPT starts a lot of sentences with a preposition and a gerund; for instance: “**By providing** a safe environment…”
+- Humans should use more personal pronouns, particularly “I.”
+- GPT seems to use description words a lot more (adjectives and adverbs)
+- GPT uses lists often, so I would expect to see more commas and structures like `NOUN COMMA NOUN COMMA COOR-CONJUNCTION NOUN`
+- `COMMA VERB-GERUND`: GPT often uses verb gerunds after clauses; for instance: “The dog slept[, offering] a fun jumping challenge for the fox.”
+- `PERIOD PREP VERB-GERUND`: GPT starts a lot of sentences with a preposition and a gerund; for instance: “[By providing] a safe environment…”
 
 The latter two items are ones that I am particularly curious about, because I personally observe them all the time, and I find them to be pretty characteristic of GPT.
 
@@ -94,13 +94,13 @@ Interestingly, for all n-gram sizes except `n=1`, the model’s precision for hu
 | , (comma)                | VBD (past tense verb)  | VBG NNS        | PRP MD        | CC JJ NN          | RB , PRP           |
 
 There’s a lot of information from this table and a lot of possible conclusions to draw from this, but here are some highlights I notice:
-GPT is characterized by more adjectives (expected) and verb gerunds (also expected).
-The `, VBG` and `. IN VBG` patterns stand out to me in particular, as explained before.
-Humans use more personal pronouns, as expected.
-Humans use more modal/auxiliary verbs. This might be an issue of *certainty*- maybe humans make more suggestions and opinionated statements (might, may, could, should) than GPT does.
-Lists seem to be a big part of GPT’s characteristic: commas show up in its n-grams a lot more. Note the `NN , CC` which likely represents the ending of a list of nouns.
-Humans use more adverbs- this was not expected. I thought I observed adverbs more in GPT. There are a lot of more common adverbs that don’t end in the typical “-ly”, like “more” and “much”, so that might be why I didn’t notice.
-The `RB , IN` and `RB , PRP` are likely conjunctive adverbs at the starts of sentences, like “However, …” or “Firstly, …”. I would have expected that GPT uses these more, since these are very “cookie cutter” parts of essays, but it makes sense that humans would use them too.
+- GPT is characterized by more adjectives (expected) and verb gerunds (also expected).
+- The `, VBG` and `. IN VBG` patterns stand out to me in particular, as explained before.
+- Humans use more personal pronouns, as expected.
+- Humans use more modal/auxiliary verbs. This might be an issue of *certainty*- maybe humans make more suggestions and opinionated statements (might, may, could, should) than GPT does.
+- Lists seem to be a big part of GPT’s characteristic: commas show up in its n-grams a lot more. Note the `NN , CC` which likely represents the ending of a list of nouns.
+- Humans use more adverbs- this was not expected. I thought I observed adverbs more in GPT. There are a lot of more common adverbs that don’t end in the typical “-ly”, like “more” and “much”, so that might be why I didn’t notice.
+- The `RB , IN` and `RB , PRP` are likely conjunctive adverbs at the starts of sentences, like “However, …” or “Firstly, …”. I would have expected that GPT uses these more, since these are very “cookie cutter” parts of essays, but it makes sense that humans would use them too.
 
 ## Conclusion
 
